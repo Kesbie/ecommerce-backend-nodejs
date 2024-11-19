@@ -11,21 +11,25 @@ const keyTokenSchema = new Schema(
       type: String,
       require: true,
       unique: true,
-      index: true
+      index: true,
     },
     publicKey: {
       type: String,
-      require: true
+      require: true,
+    },
+    refreshTokensUsed: {
+      type: Array,
+      default: [],
     },
     refreshToken: {
-      type: Array,
-      default: []
-    }
+      type: String,
+      require: true,
+    },
   },
   {
     timestamps: true,
-    collection: COLLECTION_NAME
-  }
+    collection: COLLECTION_NAME,
+  },
 )
 
 module.exports = model(DOCUMENT_NAME, keyTokenSchema)

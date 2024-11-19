@@ -2,10 +2,7 @@
 
 const { findById } = require('../services/apikey.service')
 
-const HEADER = {
-  API_KEY: 'x-api-key',
-  AUTHORIZATION: 'authorization',
-}
+const { HEADER } = require('../constants')
 
 const apiKey = async (req, res, next) => {
   try {
@@ -51,5 +48,5 @@ const permission = (permission) => {
 
 module.exports = {
   apiKey,
-  permission
+  permission,
 }
